@@ -18,8 +18,8 @@ app.use(express.static("client/build"));
 const getNLUInstance = async () => {
     try{
 
-        let apikey:string = "wOwffr2iEdu2BOisYz-lVvDq_8IYgE9xfbzlRG6PgXcM"
-        let serviceUrl: string = "https://api.eu-gb.natural-language-understanding.watson.cloud.ibm.com/instances/edd172e3-7144-422b-a2fd-94681ec3a9cb";
+        let apikey:any = process.env.API_KEY
+        let serviceUrl:any = process.env.API_URL
 
         const nlu = new NLU({
           version: "2021-08-01",

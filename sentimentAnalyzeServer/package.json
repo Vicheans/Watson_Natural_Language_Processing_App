@@ -1,11 +1,16 @@
 {
-  "name": "sentimentanalyzeserver",
+  "name": "vicheans-sentiment-analyzer",
   "version": "1.0.0",
   "description": "",
   "main": "app.ts",
   "scripts": {
     "start": "nodemon app.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tslint -c tslint.json -p tsconfig.json --fix",
+    "tsc": "tsc",
+    "dev:start": "npm-run-all build start",
+    "dev": "nodemon --watch src -e ts,ejs --exec npm run dev:start",
+    "build": "npm-run-all clean lint tsc copy-assets parcel"
   },
   "author": "",
   "license": "ISC",
